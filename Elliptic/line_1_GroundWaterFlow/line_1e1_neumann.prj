@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <OpenGeoSysProject>
-    <mesh>line_1_line_1e1.vtu</mesh>
-    <geometry>line_1.gml</geometry>
+	<input>
+		<mesh>
+			<file>line_1_line_1e1.vtu</file>
+		</mesh>
+		<geometry>
+			<file>line_1.gml</file>
+		</geometry>
+	</input>
 
     <processes>
         <process>

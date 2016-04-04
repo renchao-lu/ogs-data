@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <OpenGeoSysProject>
-    <mesh>quad_20x10_GroundWaterFlow.vtk</mesh>
-    <geometry>quad_20x10_left_right.gml</geometry>
+	<input>
+		<mesh>
+			<file>quad_20x10_GroundWaterFlow.vtk</file>
+		</mesh>
+		<geometry>
+			<file>quad_20x10_left_right.gml</file>
+		</geometry>
+	</input>
 
     <processes>
         <process>

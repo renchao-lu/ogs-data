@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <OpenGeoSysProject>
-    <mesh>cube_1x1x1_hex_1e1.vtu</mesh>
-    <geometry>cube_1x1x1.gml</geometry>
+	<input>
+		<mesh>
+			<file>cube_1x1x1_hex_1e1.vtu</file>
+		</mesh>
+		<geometry>
+			<file>cube_1x1x1.gml</file>
+		</geometry>
+	</input>
 
     <processes>
         <process>
