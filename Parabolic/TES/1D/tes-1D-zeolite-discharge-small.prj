@@ -47,6 +47,12 @@
             <characteristic_temperature>          200  </characteristic_temperature>
             <characteristic_vapour_mass_fraction> 0.01 </characteristic_vapour_mass_fraction>
 
+            <fluid_density>
+                <type>IdealGasBinaryMixtureDensity</type>
+                <molar_mass_0>M_N2</molar_mass_0>
+                <molar_mass_1>M_H2O</molar_mass_1>
+            </fluid_density>
+
             <output>
                 <variables>
                     <variable> pressure                </variable>
@@ -107,6 +113,16 @@
     </time_stepping>
 
     <parameters>
+        <parameter>
+            <name>M_H2O</name>
+            <type>Constant</type>
+            <value>0.018016</value>
+        </parameter>
+        <parameter>
+            <name>M_N2</name>
+            <type>Constant</type>
+            <value>0.028013</value>
+        </parameter>
     </parameters>
 
     <process_variables>
