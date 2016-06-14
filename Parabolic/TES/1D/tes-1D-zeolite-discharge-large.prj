@@ -29,6 +29,7 @@
             <reactive_system>
                 <type>Z13XBF</type>
                 <k_rate>6.0e-3</k_rate>
+                <p_ads_half>0.0</p_ads_half>
             </reactive_system>
 
             <fluid_specific_heat_source>            0.0     </fluid_specific_heat_source>
