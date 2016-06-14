@@ -26,7 +26,10 @@
                 <secondary_variable type="static" internal_name="reaction_damping_factor" output_name="reaction_damping_factor" />
             </secondary_variables>
 
-            <reactive_system><type>Z13XBF</type></reactive_system>
+            <reactive_system>
+                <type>Z13XBF</type>
+                <k_rate>6.0e-3</k_rate>
+            </reactive_system>
 
             <fluid_specific_heat_source>            0.0     </fluid_specific_heat_source>
             <fluid_specific_isobaric_heat_capacity> 1012.0  </fluid_specific_isobaric_heat_capacity>
