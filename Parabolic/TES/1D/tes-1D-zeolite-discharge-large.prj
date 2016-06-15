@@ -23,14 +23,17 @@
                 <secondary_variable type="static" internal_name="relative_humidity" output_name="relative_humidity" />
                 <secondary_variable type="static" internal_name="loading" output_name="loading" />
                 <secondary_variable type="static" internal_name="equilibrium_loading" output_name="equilibrium_loading" />
-                <secondary_variable type="static" internal_name="reaction_damping_factor" output_name="reaction_damping_factor" />
             </secondary_variables>
 
-            <reactive_system>
-                <type>Z13XBF</type>
+            <reaction_kinetics>
+                <type>LinearDrivingForce</type>
                 <k_rate>6.0e-3</k_rate>
-                <p_ads_half>0.0</p_ads_half>
-            </reactive_system>
+                <equilibrium>
+                    <type>DubininPolanyi</type>
+                    <adsorbent_density_dry>1150.0</adsorbent_density_dry>
+                    <equilibrium_data>Z13XBF</equilibrium_data>
+                </equilibrium>
+            </reaction_kinetics>
 
             <fluid_specific_heat_source>            0.0     </fluid_specific_heat_source>
             <fluid_specific_isobaric_heat_capacity> 1012.0  </fluid_specific_isobaric_heat_capacity>
@@ -102,8 +105,6 @@
                         <variable> equilibrium_loading     </variable>
                         <variable> vapour_partial_pressure </variable>
                         <variable> relative_humidity       </variable>
-
-                        <variable> reaction_damping_factor </variable>
                     </variables>
                     <output_extrapolation_residuals>true</output_extrapolation_residuals>
                 </output>
