@@ -32,15 +32,21 @@
                 </secondary_variable>
             </secondary_variables>
 
-            <reaction_kinetics>
-                <type>LinearDrivingForce</type>
-                <k_rate>6.0e-3</k_rate>
-                <equilibrium>
-                    <type>DubininPolanyi</type>
-                    <adsorbent_density_dry>1150.0</adsorbent_density_dry>
-                    <equilibrium_data>Z13XBF</equilibrium_data>
-                </equilibrium>
-            </reaction_kinetics>
+            <reaction_rate>
+                <type>UpdateOnce</type>
+                <equilibrium_reaction_vapour_pressure_limit>1</equilibrium_reaction_vapour_pressure_limit>
+                <hard_lower_vapour_pressure_limit>10.0</hard_lower_vapour_pressure_limit>
+                <upper_vapour_pressure_limit>1e5</upper_vapour_pressure_limit>
+                <reaction_kinetics>
+                    <type>LinearDrivingForce</type>
+                    <k_rate>6.0e-3</k_rate>
+                    <equilibrium>
+                        <type>DubininPolanyi</type>
+                        <adsorbent_density_dry>1150.0</adsorbent_density_dry>
+                        <equilibrium_data>Z13XBF</equilibrium_data>
+                    </equilibrium>
+                </reaction_kinetics>
+            </reaction_rate>
 
             <fluid_specific_heat_source>            0.0     </fluid_specific_heat_source>
             <fluid_specific_isobaric_heat_capacity> 1012.0  </fluid_specific_isobaric_heat_capacity>
