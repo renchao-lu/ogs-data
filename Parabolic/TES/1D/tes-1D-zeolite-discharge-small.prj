@@ -76,7 +76,7 @@
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
-            <lis>-i bicgstab -p ilu -tol 1e-24 -maxiter 10000 -print mem</lis>
+            <lis>-i bicgstab -p ilu -tol 1e-14 -maxiter 10000 -print mem</lis>
             <eigen>
                 <solver_type>        BiCGSTAB </solver_type>
                 <precon_type>        ILUT     </precon_type>
@@ -141,6 +141,8 @@
                 <pair><repeat> 1 </repeat><each_steps> 1 </each_steps></pair>
             </timesteps>
         </output>
+        <output_linear_solver_residuals>true</output_linear_solver_residuals>
+        <normalize_component_residuals> true</normalize_component_residuals>
     </time_loop>
 
     <parameters>
