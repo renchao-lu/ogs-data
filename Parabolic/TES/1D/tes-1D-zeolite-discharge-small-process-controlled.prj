@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>line_0.1_37.msh</mesh>
+    <mesh>line_0.1_1000.msh</mesh>
     <geometry>line_0.1.gml</geometry>
 
     <processes>
@@ -104,12 +104,36 @@
     <time_stepping>
         <type>FixedTimeStepping</type>
         <t_initial> 0.0 </t_initial>
-        <t_end>     0.1 </t_end>
+        <t_end>     200.0 </t_end>
         <timesteps>
-            <pair><repeat> 10 </repeat><delta_t> 0.001 </delta_t></pair>
-            <pair><repeat>  9 </repeat><delta_t> 0.01  </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.001 </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.002 </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.005 </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.01  </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.02  </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.05  </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.1   </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.2   </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  0.5   </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  1.0   </delta_t></pair>
+            <!--<pair><repeat> 10 </repeat><delta_t>  2.0   </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t>  5.0   </delta_t></pair>
+            <pair><repeat> 10 </repeat><delta_t> 10.0   </delta_t></pair>-->
         </timesteps>
     </time_stepping>
+
+    <curves>
+        <curve>
+            <name>curve_xmV_discharge</name>
+            <coords>0.0   200.0 400.0 1e6</coords>
+            <values>0.001 0.001 0.025 0.025</values>
+        </curve>
+        <curve>
+            <name>curve_xmV_charge</name>
+            <coords>0.0   200.0 400.0 1e6</coords>
+            <values>0.001 0.001 0.025 0.025</values>
+        </curve>
+    </curves>
 
     <parameters>
         <parameter>
@@ -125,15 +149,41 @@
         </parameter>
 
         <parameter>
-            <name>xmV_in</name>
+            <name>T_in2</name>
             <type>Constant</type>
-            <value>0.025</value>
+            <value>343.15</value>
+        </parameter>
+
+        <parameter>
+            <name>xmV_low</name>
+            <type>Constant</type>
+            <value>0.001</value>
         </parameter>
 
         <parameter>
             <name>mass_flux</name>
             <type>Constant</type>
             <value>0.04</value>
+        </parameter>
+
+        <parameter>
+            <name>one</name>
+            <type>Constant</type>
+            <value>0.001</value>
+        </parameter>
+
+        <parameter>
+            <name>xmV_discharge</name>
+            <type>CurveScaled</type>
+            <curve>curve_xmV_discharge</curve>
+            <parameter>one</parameter>
+        </parameter>
+
+        <parameter>
+            <name>xmV_charge</name>
+            <type>CurveScaled</type>
+            <curve>curve_xmV_charge</curve>
+            <parameter>one</parameter>
         </parameter>
     </parameters>
 
@@ -163,6 +213,7 @@
             <source_terms>
             </source_terms>
         </process_variable>
+
         <process_variable>
             <name>temperature</name>
             <components>1</components>
@@ -171,44 +222,54 @@
 
             <boundary_conditions>
                 <boundary_condition>
-                    <!-- ignored -->
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <!-- end ignored -->
-                    <type>ProcessControlled</type>
-                    <boundary_conditions>
-                        <boundary_condition>
-                            <geometrical_set>line_geometry</geometrical_set>
-                            <geometry>left</geometry>
-                            <type>Dirichlet</type>
-                            <parameter>T_in</parameter>
-                        </boundary_condition>
-                        <boundary_condition>
-                            <geometrical_set>line_geometry</geometrical_set>
-                            <geometry>left</geometry>
-                            <type>Dirichlet</type>
-                            <parameter>T_in2</parameter>
-                        </boundary_condition>
-                    </boundary_conditions>
+                    <type>Dirichlet</type>
+                    <parameter>T_in</parameter>
                 </boundary_condition>
             </boundary_conditions>
 
             <source_terms>
             </source_terms>
         </process_variable>
+
         <process_variable>
             <name>v_mass_frac</name>
             <components>1</components>
 
-            <initial_condition>xmV_in</initial_condition>
+            <initial_condition>xmV_low</initial_condition>
 
             <boundary_conditions>
                 <boundary_condition>
+                    <!-- ignored -->
                     <geometrical_set>line_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>Dirichlet</type>
-                    <parameter>xmV_in</parameter>
+                    <!-- end ignored -->
+
+                    <type>ProcessControlled</type>
+                    <measurement_geometrical_set>line_geometry</measurement_geometrical_set>
+                    <measurement_geometry>right</measurement_geometry>
+
+                    <active_bc_criterion>
+                        <type>ThNonnen</type>
+                    </active_bc_criterion>
+
+                    <boundary_conditions>
+                        <boundary_condition>
+                            <geometrical_set>line_geometry</geometrical_set>
+                            <geometry>left</geometry>
+                            <type>Dirichlet</type>
+                            <parameter>xmV_discharge</parameter>
+                        </boundary_condition>
+                        <boundary_condition>
+                            <geometrical_set>line_geometry</geometrical_set>
+                            <geometry>left</geometry>
+                            <type>Dirichlet</type>
+                            <parameter>xmV_charge</parameter>
+                        </boundary_condition>
+                    </boundary_conditions>
                 </boundary_condition>
+
             </boundary_conditions>
 
             <source_terms>
@@ -220,8 +281,9 @@
         <type>VTK</type>
         <prefix>tes_zeolite_discharge_small_pcs_controlled</prefix>
         <timesteps>
+            <!--<pair><repeat> 1 </repeat><each_steps> 10
+                 </each_steps></pair>-->
             <pair><repeat> 1 </repeat><each_steps> 10 </each_steps></pair>
-            <pair><repeat> 1 </repeat><each_steps>  9 </each_steps></pair>
         </timesteps>
     </output>
 
