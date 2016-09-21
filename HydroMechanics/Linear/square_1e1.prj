@@ -121,6 +121,21 @@
             <type>Constant</type>
             <values>1</values>
         </parameter>
+        <parameter>
+            <name>dirichlet0</name>
+            <type>Constant</type>
+            <value>0</value>
+        </parameter>
+        <parameter>
+            <name>dirichlet1</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
+        <parameter>
+            <name>fixedDisplacment</name>
+            <type>Constant</type>
+            <value>-0.05</value>
+        </parameter>
 
     </parameters>
 
@@ -135,33 +150,33 @@
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>0</component>
-                    <value>0</value>
+                    <parameter>dirichlet0</dirichlet0>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>right</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>0</component>
-                    <value>0</value>
+                    <parameter>dirichlet0</dirichlet0>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>bottom</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>1</component>
-                    <value>0</value>
+                    <parameter>dirichlet0</dirichlet0>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>1</component>
-                    <value>-0.05</value>
+                    <parameter>fixedDisplacment</dirichlet0>
                 </boundary_condition>
             </boundary_conditions>
 
@@ -179,9 +194,9 @@
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>0</component>
-                    <value>0</value>
+                    <parameter>dirichlet0</dirichlet0>
                 </boundary_condition>
 
                 <boundary_condition>
