@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>wedge-1e2-ang-0.2.vtu</mesh>
+    <mesh>wedge-1e2-ang-0.2.msh</mesh>
     <geometry>wedge-ang-0.2.gml</geometry>
 
     <processes>
