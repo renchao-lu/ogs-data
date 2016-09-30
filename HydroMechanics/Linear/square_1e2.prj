@@ -60,8 +60,8 @@
             <t_initial>0</t_initial>
             <t_end>4000</t_end>
             <timesteps>
-                <pair><repeat>25</repeat><delta_t>5</delta_t></pair>
-                <pair><repeat>110</repeat><delta_t>10</delta_t></pair>
+                <pair><repeat>40</repeat><delta_t>5</delta_t></pair>
+                <pair><repeat>1</repeat><delta_t>10</delta_t></pair>
             </timesteps>
         </time_stepping>
 

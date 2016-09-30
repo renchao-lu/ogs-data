@@ -3,11 +3,11 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="40" NumberOfCells="9">
       <PointData>
-        <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="binary" RangeMin="0" RangeMax="0.0025">
-          AQAAAACAAACAAgAAcQEAAA==eJxjYEAFki80W37/9d4D499RT/t0psxgj0h/3+pIPsH9MHHWPgj/+FKrG2mP3ODq1/w2vCu73XKP3RV5taDTAvvLFjqoeWXr7WnuQ9W/4zJEPuBDetxhFzu4/teRzY9v1ejvSYDaV163a1HeJU+4vFxYY0fAAcM95VDzk667TFd30drjgOY+dNAPtX9vVvGk852Ge9DlH0PdwxTQ17zzqMIeA6h5+y9Yta6+omzzdmq8wv1tVvYw9TLTIPxdefJvat6K2hRqbQ99ImBmr3F96/sQF3Wbz2jqd0LlVe7FnnmromRzFSpfxWsvfZPfcE8cVL6m2rVOQ0XQ5i6a/ldo/Daoeqt2m+rHGwVsjkLl6yJYYl6W6uypEVnn/rAqBR4eMH7D0gt/2KtuWu85GyUffithf5xW7Gfn24YY6ndC5bVOsrhltQrB5WUYf7mq8jHZ7IPKX1iTVTcx+7k1Lvtg/N1Q9VKzQ7KqWhDuAwDzUNzq
+        <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="binary" RangeMin="0" RangeMax="0.05">
+          AQAAAACAAACAAgAAXwEAAA==eJxjYEAFV86HMMwPd9kD46+2cVRcsdViz58H98+9Epi4Hyb+C8r/3lH+7oSmO1z9N0PB4JnX1Pdc1TqlIibYuH/9vZcnPif/t/6Npv8SVN4oPCoo8LQTXP+FqRuzV7Kz2vyDqo9a52UWzm8Hly+tOq3Zk6W65zpU/0y9BE6/xzoY7kMHf6HyiZ0rDkW/styDLn8Dat4POTGf4wctbGDqrWv0il8dMrBpPmPz5a/AQrj5ML7Wqb/l234522QmHUrvmTlz/44g6evupwz3NKGpT4fKi8mvWCem4AE379lS2wfuGwJssqDyEjV/bKsyPDDsa0TjZ0DVS01NNNos4AhX72M5qe5bk6XNrJkgsBKuHsbvLfvQPeeSqY3Kthn9YaFL97emL/k38ZAXhnolqPy5EAftbUv99sDkd/qkf3sWabpHGSp/1cLgYb+L/R5c9qGb1xbC9lLOzwWuHgCSZgBY
         </DataArray>
-        <DataArray type="Float64" Name="pressure" format="binary" RangeMin="0" RangeMax="0.024813338818">
-          AQAAAACAAABAAQAAPwAAAA==eJxbG6qtl8k5zX4dlH5Rl7803X4qnGYgAGD6nhJQD1P3nIA6q8Mvf63KmGlvA6VxqbPDIW9NQB+1AQA2ei2H
+        <DataArray type="Float64" Name="pressure" format="binary" RangeMin="0" RangeMax="1.4827294301e-05">
+          AQAAAACAAABAAQAAUAAAAA==eJxzP3X0fLjEe7vp1yG09s/lNbGzn9qd5VgBphkIgAXnIfo4+fGr3/EEom73w+V41UVEhlR++XnJ7qMWhMal7pYqdvmpCfj1URsAAOmhNdo=
         </DataArray>
       </PointData>
       <CellData>
