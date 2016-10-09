@@ -184,6 +184,7 @@
         <process_variable>
             <name>displacement</name>
             <components>2</components>
+            <order>2</order>
 
             <initial_condition>displacement0</initial_condition>
 
@@ -228,11 +229,11 @@
         <process_variable>
             <name>pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>pressure_ic</initial_condition>
 
             <boundary_conditions>
-                <decrease_order>1</decrease_order>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>top</geometry>
