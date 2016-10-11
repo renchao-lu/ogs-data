@@ -39,7 +39,17 @@
                 <secondary_variable type="static"
                     internal_name="sigma_yy" output_name="sigma_yy" />
                 <secondary_variable type="static"
+                    internal_name="sigma_zz" output_name="sigma_zz" />
+                <secondary_variable type="static"
                     internal_name="sigma_xy" output_name="sigma_xy" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_xx" output_name="epsilon_xx" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_yy" output_name="epsilon_yy" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_zz" output_name="epsilon_zz" />
+                <secondary_variable type="static"
+                    internal_name="epsilon_xy" output_name="epsilon_xy" />
             </secondary_variables>
         </process>
     </processes>
@@ -60,7 +70,12 @@
                         <variable>displacement</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
+                        <variable>sigma_zz</variable>
                         <variable>sigma_xy</variable>
+                        <variable>epsilon_xx</variable>
+                        <variable>epsilon_yy</variable>
+                        <variable>epsilon_zz</variable>
+                        <variable>epsilon_xy</variable>
                     </variables>
                 </output>
             </process>
@@ -69,9 +84,10 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>1</t_end>
+            <t_end>5.1</t_end>
             <timesteps>
-                <pair><repeat>10</repeat><delta_t>0.1</delta_t></pair>
+                <pair><repeat>1</repeat><delta_t>0.1</delta_t></pair>
+                <pair><repeat>100</repeat><delta_t>0.05</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -79,7 +95,7 @@
             <type>VTK</type>
             <prefix>cube_1e0</prefix>
             <timesteps>
-                <pair><repeat>10</repeat><each_steps>1</each_steps></pair>
+                <pair><repeat>101</repeat><each_steps>1</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
@@ -88,82 +104,82 @@
         <parameter>
             <name>G</name>
             <type>Constant</type>
-            <value>0.6</value>
+            <value>150.</value>
         </parameter>
         <parameter>
             <name>K</name>
             <type>Constant</type>
-            <value>0.9</value>
+            <value>200.</value>
         </parameter>
         <parameter>
             <name>kappa</name>
             <type>Constant</type>
-            <value>5.e-3</value>
+            <value>0.1</value>
         </parameter>
         <parameter>
             <name>beta</name>
             <type>Constant</type>
-            <value>0.2309</value>
+            <value>0.095</value>
         </parameter>
         <parameter>
             <name>gamma</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>1.</value>
         </parameter>
         <parameter>
             <name>hard</name>
             <type>Constant</type>
-            <value>2.5e-8</value>
+            <value>0.</value>
         </parameter>
         <parameter>
             <name>alpha</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.01</value>
         </parameter>
         <parameter>
             <name>delta</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.0078</value>
         </parameter>
         <parameter>
             <name>epsilon</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.1</value>
         </parameter>
         <parameter>
             <name>m</name>
             <type>Constant</type>
-            <value>1.</value>
+            <value>0.54</value>
         </parameter>
         <parameter>
             <name>alphap</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.01</value>
         </parameter>
         <parameter>
             <name>deltap</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.0078</value>
         </parameter>
         <parameter>
             <name>epsilonp</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.1</value>
         </parameter>
         <parameter>
             <name>mp</name>
             <type>Constant</type>
-            <value>1.</value>
+            <value>0.54</value>
         </parameter>
         <parameter>
             <name>betap</name>
             <type>Constant</type>
-            <value>0.2309</value>
+            <value>0.0608</value>
         </parameter>
         <parameter>
             <name>gammap</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>1.</value>
         </parameter>
         <parameter>
             <name>displacement0</name>
@@ -172,11 +188,76 @@
         </parameter>
 
         <parameter>
-            <name>neumann_force</name>
+            <name>Dirichlet_left</name>
             <type>Constant</type>
-            <values>-0.001</values>
+            <value>0.</value>
+        </parameter>
+
+        <parameter>
+            <name>Dirichlet_bottom</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+
+        <parameter>
+            <name>Dirichlet_front</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+
+        <parameter>
+            <name>Dirichlet_top_spatial</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
+
+        <parameter>
+            <name>Neumann_spatial</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
+
+        <parameter>
+            <name>Dirichlet_top</name>
+            <type>CurveScaled</type>
+            <curve>Dirichlet_top_temporal</curve>
+            <parameter>Dirichlet_top_spatial</parameter>
+        </parameter>
+
+        <parameter>
+            <name>Neumann_force_right</name>
+            <type>CurveScaled</type>
+            <curve>Neumann_temporal_right</curve>
+            <parameter>Neumann_spatial</parameter>
+        </parameter>
+
+        <parameter>
+            <name>Neumann_force_top</name>
+            <type>CurveScaled</type>
+            <curve>Neumann_temporal_top</curve>
+            <parameter>Neumann_spatial</parameter>
         </parameter>
     </parameters>
+
+    <curves>
+        <curve>
+            <name>Dirichlet_top_temporal</name>
+            <coords>0.0 0.1 5.1</coords>
+            <values>0.0 0.0 -0.005</values>
+        </curve>
+
+        <curve>
+            <name>Neumann_temporal_right</name>
+            <coords>0.0 0.1 5.1</coords>
+            <values>0.0 0.0 -0.005</values>
+        </curve>
+
+        <curve>
+            <name>Neumann_temporal_top</name>
+            <coords>0.0 0.1 5.1</coords>
+            <values>-0.07 -0.07 -0.01</values>
+        </curve>
+    </curves>
 
     <process_variables>
         <process_variable>
@@ -190,25 +271,25 @@
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>left</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>0</component>
-                    <value>0</value>
+                    <parameter>Dirichlet_left</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>front</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>1</component>
-                    <value>0</value>
+                    <parameter>Dirichlet_front</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>top</geometry>
-                    <type>UniformDirichlet</type>
+                    <geometry>bottom</geometry>
+                    <type>Dirichlet</type>
                     <component>2</component>
-                    <value>0</value>
+                    <parameter>Dirichlet_bottom</parameter>
                 </boundary_condition>
 
                 <!-- force -->
@@ -217,23 +298,23 @@
                     <geometry>right</geometry>
                     <type>Neumann</type>
                     <component>0</component>
-                    <parameter>neumann_force</parameter>
+                    <parameter>Neumann_force_right</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
                     <geometry>back</geometry>
-                    <type>UniformDirichlet</type>
+                    <type>Dirichlet</type>
                     <component>1</component>
-                    <value>-0.001</value>
+                    <parameter>Dirichlet_top</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
                     <geometrical_set>cube_1x1x1_geometry</geometrical_set>
-                    <geometry>bottom</geometry>
+                    <geometry>top</geometry>
                     <type>Neumann</type>
                     <component>2</component>
-                    <parameter>neumann_force</parameter>
+                    <parameter>Neumann_force_top</parameter>
                 </boundary_condition>
             </boundary_conditions>
 
@@ -256,8 +337,8 @@
             <name>general_linear_solver</name>
             <lis>-i cg -p jacobi -tol 1e-16 -maxiter 10000</lis>
             <eigen>
-                <solver_type>CG</solver_type>
-                <precon_type>DIAGONAL</precon_type>
+                <solver_type>SparseLU</solver_type>
+                <precon_type>ILUT</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
                 <error_tolerance>1e-16</error_tolerance>
             </eigen>
@@ -267,13 +348,5 @@
             </petsc>
         </linear_solver>
     </linear_solvers>
-
-    <curves>
-        <curve>
-            <name>curveA</name>
-            <coords>0 0.01 15</coords>
-            <values>0 1 1</values>
-        </curve>
-    </curves>
 
 </OpenGeoSysProject>
