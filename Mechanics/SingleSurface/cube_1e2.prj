@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>cube_1x1x1_hex_1e3.vtu</mesh>
+    <mesh>cube_1x1x1_hex_1e2.vtu</mesh>
     <geometry>cube_1x1x1.gml</geometry>
 
     <processes>
@@ -93,7 +93,7 @@
 
         <output>
             <type>VTK</type>
-            <prefix>cube_1e3</prefix>
+            <prefix>cube_1e2</prefix>
             <timesteps>
                 <pair><repeat>101</repeat><each_steps>1</each_steps></pair>
             </timesteps>
@@ -192,19 +192,19 @@
             <type>Constant</type>
             <value>0.</value>
         </parameter>
-
+        
         <parameter>
             <name>Dirichlet_bottom</name>
             <type>Constant</type>
             <value>0.</value>
         </parameter>
-
+        
         <parameter>
             <name>Dirichlet_front</name>
             <type>Constant</type>
             <value>0.</value>
         </parameter>
-
+        
         <parameter>
             <name>Dirichlet_top_spatial</name>
             <type>Constant</type>
