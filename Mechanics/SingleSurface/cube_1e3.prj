@@ -96,7 +96,7 @@
             <type>VTK</type>
             <prefix>cube_1e3</prefix>
             <timesteps>
-                <pair><repeat>101</repeat><each_steps>1</each_steps></pair>
+                <pair><repeat>10000000</repeat><each_steps>1</each_steps></pair>
             </timesteps>
         </output>
     </time_loop>
