@@ -87,8 +87,8 @@
             <t_initial>0</t_initial>
             <t_end>5.1</t_end>
             <timesteps>
-                <pair><repeat>1</repeat><delta_t>0.1</delta_t></pair>
-                <pair><repeat>100</repeat><delta_t>0.05</delta_t></pair>
+                <pair><repeat>1</repeat><delta_t>0.05</delta_t></pair>
+                <pair><repeat>1000</repeat><delta_t>0.025</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -135,17 +135,17 @@
         <parameter>
             <name>alpha</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.01</value>
         </parameter>
         <parameter>
             <name>delta</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.0078</value>
         </parameter>
         <parameter>
             <name>epsilon</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.1</value>
         </parameter>
         <parameter>
             <name>m</name>
@@ -155,17 +155,17 @@
         <parameter>
             <name>alphap</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.01</value>
         </parameter>
         <parameter>
             <name>deltap</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.0078</value>
         </parameter>
         <parameter>
             <name>epsilonp</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0.1</value>
         </parameter>
         <parameter>
             <name>mp</name>
@@ -250,13 +250,13 @@
         <curve>
             <name>Neumann_temporal_right</name>
             <coords>0.0 0.1 5.1</coords>
-            <values>-0.01 -0.01 -0.01</values>
+            <values>0.0 -0.07 -0.01</values>
         </curve>
 
         <curve>
             <name>Neumann_temporal_top</name>
             <coords>0.0 0.1 5.1</coords>
-            <values>-0.01 -0.01 -0.01</values>
+            <values>0 -0.07 -0.01</values>
         </curve>
     </curves>
 
