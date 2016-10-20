@@ -250,13 +250,13 @@
         <curve>
             <name>Neumann_temporal_right</name>
             <coords>0.0 0.1 5.1</coords>
-            <values>0.0 -0.07 -0.01</values>
+            <values>0.0 -0.07 -0.02</values>
         </curve>
 
         <curve>
             <name>Neumann_temporal_top</name>
             <coords>0.0 0.1 5.1</coords>
-            <values>0 -0.07 -0.01</values>
+            <values>0 -0.07 -0.02</values>
         </curve>
     </curves>
 
