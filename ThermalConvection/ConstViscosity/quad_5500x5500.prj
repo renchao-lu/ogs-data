@@ -11,15 +11,12 @@
             <integration_order>2</integration_order>
 
             <thermal_conductivity>K</thermal_conductivity>
-	    <!--<new_param>NP</new_param>-->
 
-         <!--   <nonlinear_solver>basic_picard</nonlinear_solver>
-            <time_discretization><type>BackwardEuler</type></time_discretization> -->
+            <process_variables>
+                <temperature_variable>temperature</temperature_variable>
+                <pressure_variable>pressure</pressure_variable>
+            </process_variables>
 
-	    <process_variables>
-		    <temperature_variable>temperature</temperature_variable>
-		    <pressure_variable>pressure</pressure_variable>
-	    </process_variables>
 
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
