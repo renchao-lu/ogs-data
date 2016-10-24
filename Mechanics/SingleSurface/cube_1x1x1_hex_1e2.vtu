@@ -3,17 +3,8 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="216" NumberOfCells="125">
       <PointData>
-        <DataArray type="Float64" Name="Linear_1_to_minus1" format="binary" RangeMin="-1" RangeMax="1">
-          AQAAAACAAADABgAAMgAAAA==eJxjYACBD/bGYPDYfsZMEDgJo/ebQMT3M0DUwehR9aPqR9WPqh9VP6p+QNUDAF9ef0M=
-        </DataArray>
-        <DataArray type="Float64" Name="D1_left_front_N1_right" format="binary" RangeMin="1" RangeMax="1.6753144833">
-          AQAAAACAAADABgAA+QAAAA==eJxjYACBD/YMJNIuJZePruj4YL/FZvP9VSof7R/vvhIz88NH+5cTLGzFtD7bx5mc2xxX8RWuXudQbbvl/w/2trJfpi2T/WRve/QPw5qmz/YnTRimVGd8tZ8rNePeZ4UfcPWVqbsn3Qr/aH/RyFVK+/In++txt349mfHFXnbJ4U2Lr3yzfx7KKe63/idcPSfbHZmlvR/tO0Lb5znbf7aPn/Dlt5rlV3s2OcfJLPO+25c+X6Es2PELrn7Z+nXBk+d/tF8oV7HsS9Jney4H4/9uuV/ta5RfP6q5991ex96tX+zcL5LDZTR8RsNnNHxGw2c0fOgTPgAmCcBf
-        </DataArray>
       </PointData>
       <CellData>
-        <DataArray type="UInt32" Name="MaterialIDs" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAD0AQAADgAAAA==eJxjYBgFIw0AAAH0AAE=
-        </DataArray>
       </CellData>
       <Points>
         <DataArray type="Float64" Name="Points" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="1.7320508076">

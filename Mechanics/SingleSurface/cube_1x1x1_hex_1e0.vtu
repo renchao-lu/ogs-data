@@ -3,17 +3,8 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="8" NumberOfCells="1">
       <PointData>
-        <DataArray type="Float64" Name="Linear_1_to_minus1" format="binary" RangeMin="-1" RangeMax="1">
-          AQAAAACAAABAAAAAFAAAAA==eJxjYACBD/YMEHo/A4l8AExnC3k=
-        </DataArray>
-        <DataArray type="Float64" Name="D1_left_front_N1_right" format="binary" RangeMin="1" RangeMax="1.6753144833">
-          AQAAAACAAABAAAAAGwAAAA==eJxjYACBD/YMaLSOvVu/2LlfGOLo8gB04w3V
-        </DataArray>
       </PointData>
       <CellData>
-        <DataArray type="UInt32" Name="MaterialIDs" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAAAEAAAADAAAAA==eJxjYGBgAAAABAAB
-        </DataArray>
       </CellData>
       <Points>
         <DataArray type="Float64" Name="Points" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="1.7320508076">

@@ -3,17 +3,8 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="1331" NumberOfCells="1000">
       <PointData>
-        <DataArray type="Float64" Name="Linear_1_to_minus1" format="binary" RangeMin="-1" RangeMax="1">
-          AQAAAACAAACYKQAAaQAAAA==eJztzLENgDAMBMDsBH3WBJZxzQipqegyAiIxU3DfvCy9r5Q3vR77m7suI1ferW6jz1oyecfsFuvcR/7HXPWvuVwul8vlcrlcLpfL5XK5XC6Xy+VyuVwul8vlcrlcLpfL5XJ/4z5dmMdD
-        </DataArray>
-        <DataArray type="Float64" Name="D1_left_front_N1_right" format="binary" RangeMin="1" RangeMax="1.6753144833">
-          AQAAAACAAACYKQAAlAMAAA==eJzt039M1HUcx/EDUWYLvDMHTDi4C4ZgR5pCxfJ4CcRl80eagXYg2jXnbZ5pSxRIakDmt5IfInhHoayFhHSCU2LxY2IcpBbxm5GsxM42hjT5fH/cHVBJ1z/H3/3hf+/PP5//nvu8PttDJvvvMMge0/15hFq/5mmG8eB3/YpTGPQJhqdMBxnkd5qs+ysYLL8U7rF2M3yrKKo8N89wLDW+ZWITj+ns/qlXLvMIk3eN2l4VkLJMnT19RPR0y8ymj2KTGV4+OtRdxzE8sIbZhgYZmjZcG6+P4PG7XbwhL+Bxv204o5LxCF+hDvDOETBZ+qI2YLWI/sKB5gKlhMzY3muZ2Q5PtyfncIe3gSHoamu/6ibDwV1ZLU3reNwUbY9q6niUeEfe6IsRsPG5yVbrLQH+5c3HEgpEJDVs3609IOFh4BVHLueAYaDMf7PL6en6vhk50pHHoOnMOxXv3qkYuRPyFsdDq5TO1SrdncV++bouAdruv2VWd08Zqrg+sk/C7VhZ+ftGB+zGRV7pNU6cX2m5K6pmPN0tNiPX4/5Hnx3zlu/W8JAnt0UoBnmM+pXf+zBfQKLYHL4hWYR9heaN59176z7jIqMC3O97pB7WxzlhMpiDx/NdaDBViYFes54u16OK+/4SQ87+trKxXTwOJ7VYO/0FDKxLWfnMkICYd6q3BNaLGM0cm/vDIuH8D+3TcRcdUNbYrn417MTWkLRV0ZoZTKQuDdzWuNB9KatzxNDC8HHaotsvHOdh7vOxeyUIWBz8o9GwXMT1+62DylkRMdWXnlW4JJz5595pf4UThcZ0X/NmF9JLRwuP1M8gLv2TD1atnfN0dzZXJlV0MSxd8mvIxSIehlg5f2WvAC711IVkiCjSZRRPrZWwt1T6KzLegdWmtz/VZjixJDTxrM8FF05G+6HYvT9roi5cwS1025Q+adt+Yjger9kU9AWPkw1lYWPvCeixrj/gpxfx4GjuDuXrEkL0fVGv7XNAtawysYpzYjgB7Xm9LjxZ8VtQY+ws1JykFtoXupbLUb6nf2aobWzYebaaxzd/RveX5Ar4MjS7VjKI2P111aRqj4QnNq6f1x1y4GGH3aUzO3EifMp+4q4LhwZvbedSZqGBriSgd+6x+SXH5Jgck2NyTI7JMTkmx+SYHJNjckyOyTE5JsfkmByTY3JMjskxOSbH5Jgck2NyTI7JMTkmx+SYHJNjcvz/HP8LX1NkKA==
-        </DataArray>
       </PointData>
       <CellData>
-        <DataArray type="UInt32" Name="MaterialIDs" format="binary" RangeMin="0" RangeMax="0">
-          AQAAAACAAACgDwAAGwAAAA==eJztwTEBAAAAwqD1T20MH6AAAACAtwEPoAAB
-        </DataArray>
       </CellData>
       <Points>
         <DataArray type="Float64" Name="Points" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="1.7320508076">
