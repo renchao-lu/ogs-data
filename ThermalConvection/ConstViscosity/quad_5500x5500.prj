@@ -17,11 +17,13 @@
                 <pressure_variable>pressure</pressure_variable>
             </process_variables>
 
-
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="darcy_velocity_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="darcy_velocity_y" />
             </secondary_variables>
+
+            <specific_body_force>gravity</specific_body_force>
+
         </process>
     </processes>
 
@@ -129,6 +131,12 @@
             <name>t_Dirichlet_top</name>
             <type>Constant</type>
             <value>20</value>
+        </parameter>
+
+        <parameter>
+            <name>gravity</name>
+            <type>Constant</type>
+            <values>0 -9.81</values>
         </parameter>
     </parameters>
 
