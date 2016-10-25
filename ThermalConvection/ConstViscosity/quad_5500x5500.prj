@@ -11,6 +11,7 @@
             <integration_order>2</integration_order>
 
             <thermal_conductivity>K</thermal_conductivity>
+            <porosity>poro</porosity>
 
             <process_variables>
                 <temperature_variable>temperature</temperature_variable>
@@ -98,11 +99,11 @@
             <type>Constant</type>
             <value>3.2</value>
        </parameter>
-        <!--<parameter>
-            <name>NP</name>
+        <parameter>
+            <name>poro</name>
             <type>Constant</type>
-            <value>3.2</value>
-        </parameter>-->
+            <value>0.001</value>
+        </parameter>
        <parameter>
             <name>T0</name>
             <type>MeshNode</type>
