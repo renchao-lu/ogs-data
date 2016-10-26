@@ -12,6 +12,7 @@
 
             <porosity>poro</porosity>
             <intrinsic_permeability>kappa</intrinsic_permeability>
+            <storage>S</storage>
             <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
             <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
@@ -108,6 +109,11 @@
             <name>kappa</name>
             <type>Constant</type>
             <value>1e-14</value>
+        </parameter>
+        <parameter>
+            <name>S</name>
+            <type>Constant</type>
+            <value>0.0</value>
         </parameter>
         <parameter>
             <name>lambda_solid</name>
