@@ -13,6 +13,7 @@
             <porosity>poro</porosity>
             <intrinsic_permeability>kappa</intrinsic_permeability>
             <storage>S</storage>
+            <viscosity>mu</viscosity>
             <density_solid>rho_solid</density_solid>
             <density_fluid>rho_fluid</density_fluid>
             <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
@@ -116,6 +117,11 @@
             <name>S</name>
             <type>Constant</type>
             <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>mu</name>
+            <type>Constant</type>
+            <value>1.0e-3</value>
         </parameter>
         <parameter>
             <name>rho_solid</name>
