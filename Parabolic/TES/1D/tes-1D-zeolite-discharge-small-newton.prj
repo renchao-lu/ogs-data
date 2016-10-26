@@ -61,7 +61,7 @@
             <solid_specific_isobaric_heat_capacity> 880.0   </solid_specific_isobaric_heat_capacity>
             <tortuosity>                            1.0     </tortuosity>
             <diffusion_coefficient>                 3.0e-5  </diffusion_coefficient>
-            <porosity>                              0.4     </porosity>
+            <porosity>                              porosity     </porosity>
             <solid_density_dry>                     1150.0  </solid_density_dry>
             <solid_density_initial>                 1305.25 </solid_density_initial>
 
@@ -127,6 +127,12 @@
     </time_loop>
 
     <parameters>
+        <parameter>
+            <name>porosity</name>
+            <type>Constant</type>
+            <value>0.4</value>
+        </parameter>
+
         <parameter>
             <name>p_in</name>
             <type>Constant</type>
