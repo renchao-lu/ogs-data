@@ -18,7 +18,7 @@
 
             <residual_stiffness>k</residual_stiffness>
             <crack_resistance>gc</crack_resistance>
-            <crack__length_scale>ls</crack_length_scale>
+            <crack_length_scale>ls</crack_length_scale>
             <kinetic_coefficient>M</kinetic_coefficient>
             <solid_density>rho_sr</solid_density>
 
