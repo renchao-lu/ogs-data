@@ -15,6 +15,7 @@
             <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
             <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
             <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
+            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
 
             <process_variables>
                 <temperature_variable>temperature</temperature_variable>
@@ -121,6 +122,11 @@
             <name>c_fluid</name>
             <type>Constant</type>
             <value>4200</value>
+        </parameter>
+        <parameter>
+            <name>beta</name>
+            <type>Constant</type>
+            <value>4.3e-4</value>
         </parameter>
        <parameter>
             <name>T0</name>
