@@ -3,32 +3,32 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="8" NumberOfCells="1">
       <PointData>
-        <DataArray type="Float64" Name="displacement" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="0.0058160307858">
-          AQAAAACAAADAAAAAMwAAAA==eJxjYMAOMqzUmCaZJtrjkGYoEFnn/rCqZD+6enRxXOaim4/Oh5mDrh4mngnlAwAVfyGm
+        <DataArray type="Float64" Name="displacement" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="0.0026676085653">
+          AQAAAACAAADAAAAAOQAAAA==eJxjYMAOYvtPsM8s9rDHIc2QtJhxD6tQyn4YPx6qHl0cHcRA1cWgmY9uH8wcdPUw8TgoHwBJ/iZg
         </DataArray>
-        <DataArray type="Float64" Name="epsilon_xx" format="binary" RangeMin="0.002100738832" RangeMax="0.002100738832">
-          AQAAAACAAABAAAAAIQAAAA==eJxbVjtt0kTTRPslUHoZlF4FpVdA6dVQeg2aOgDTfR2Y
+        <DataArray type="Float64" Name="epsilon_xx" format="binary" RangeMin="0.00074620220363" RangeMax="0.00074620220363">
+          AQAAAACAAABAAAAAIgAAAA==eJzTajjBPrPYw94ASptAaSMorQelzaG0PJTWh9IAIgUYhA==
         </DataArray>
         <DataArray type="Float64" Name="epsilon_xy" format="binary" RangeMin="0" RangeMax="0">
           AQAAAACAAABAAAAADAAAAA==eJxjYKAMAAAAQAAB
         </DataArray>
-        <DataArray type="Float64" Name="epsilon_yy" format="binary" RangeMin="-0.005" RangeMax="-0.005">
-          AQAAAACAAABAAAAAHgAAAA==eJzLFVnn/rCqZH8hlC6A0llo4vlo/CIoDQAGLCA0
+        <DataArray type="Float64" Name="epsilon_yy" format="binary" RangeMin="-0.00245" RangeMax="-0.00245">
+          AQAAAACAAABAAAAAIAAAAA==eJyLWcy4h1UoZX8ylE6D0qlodAaUjoLSSVAaAAWNF+Q=
         </DataArray>
-        <DataArray type="Float64" Name="epsilon_zz" format="binary" RangeMin="0.002100738832" RangeMax="0.002100738832">
-          AQAAAACAAABAAAAAHgAAAA==eJxbXTtt0kTTRPtlUHoFlF6Lxl8NpVeh0QDWBR2m
+        <DataArray type="Float64" Name="epsilon_zz" format="binary" RangeMin="0.00074620220363" RangeMax="0.00074620220363">
+          AQAAAACAAABAAAAAHgAAAA==eJxTbzjBPrPYw14HShtBaQM02hRKy6OpAwAf3Rh8
         </DataArray>
-        <DataArray type="Float64" Name="sigma_xx" format="binary" RangeMin="-2.8228291448e-07" RangeMax="-2.8228291381e-07">
-          AQAAAACAAABAAAAAMwAAAA==eJwrk/iQNPXjpH0F9fVg+ua9S2Ba5u0SMK3vchFMn6k4BKalhOPAtMZ7mWQQDQDitSXs
+        <DataArray type="Float64" Name="sigma_xx" format="binary" RangeMin="-0.0455" RangeMax="-0.0455">
+          AQAAAACAAABAAAAAIAAAAA==eJzT/v9++THv5fu1obQDlPaC0hZotDCU1oXSAFR7KfE=
         </DataArray>
-        <DataArray type="Float64" Name="sigma_xy" format="binary" RangeMin="-9.7424738173e-18" RangeMax="6.1554594212e-17">
-          AQAAAACAAABAAAAASwAAAA==eJwBQAC//4qDstVptSc8rxihBPF2Zrx/Pfl8s4orPBL2dzf2hSC8vfvBv+O8Y7xs7ghp7b2RPFMvJVdECkG8B6FAKMpTRrwx3B+d
+        <DataArray type="Float64" Name="sigma_xy" format="binary" RangeMin="-9.8464812874e-18" RangeMax="8.5552622387e-18">
+          AQAAAACAAABAAAAASwAAAA==eJwBQAC//yAOo8hrIDs8h4u9Lla0ZrxE2DzLGmVKPIowri8b72W8oG+3vMcLETyuP+EakLBNPIhCLNuS2Ee81c8+rSK6YzyN/h1J
         </DataArray>
-        <DataArray type="Float64" Name="sigma_yy" format="binary" RangeMin="-0.22776609819" RangeMax="-0.22776609819">
-          AQAAAACAAABAAAAAIwAAAA==eJy7aFnQXKB+dv9RKH0VSl+H0neg9EUovQ9K34bSACqsIQE=
+        <DataArray type="Float64" Name="sigma_yy" format="binary" RangeMin="-0.27973942423" RangeMax="-0.27973942423">
+          AQAAAACAAABAAAAAIAAAAA==eJyr0Zyr7/D84v4mKN0GpRuhdDOaeBmUboDSACZ0IWU=
         </DataArray>
-        <DataArray type="Float64" Name="sigma_zz" format="binary" RangeMin="-2.8228291437e-07" RangeMax="-2.8228291366e-07">
-          AQAAAACAAABAAAAAMgAAAA==eJxzET6SNPXjpH1MtkFgWrB4GZg+vu4imA53+QumuY9OA9NdhkZget/692AaAHrAJSQ=
+        <DataArray type="Float64" Name="sigma_zz" format="binary" RangeMin="-0.0455" RangeMax="-0.0455">
+          AQAAAACAAABAAAAAIAAAAA==eJwz+f9++THv5fvNobQhlHaA0hZQWgON1oXSAFTLKfI=
         </DataArray>
       </PointData>
       <CellData>
