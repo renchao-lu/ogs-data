@@ -6,14 +6,22 @@
 
     <processes>
         <process>
-            <name>Freezing</name>
-            <type>FREEZING</type>
+            <name>ThermalConvection</name>
+            <type>DensityDrivenFlow</type>
+            <integration_order>2</integration_order>
 
-            <thermal_conductivity>K</thermal_conductivity>
-            <!--<new_param>NP</new_param>-->
-
-         <!--   <nonlinear_solver>basic_picard</nonlinear_solver>
-            <time_discretization><type>BackwardEuler</type></time_discretization> -->
+            <porosity>poro</porosity>
+            <intrinsic_permeability>kappa</intrinsic_permeability>
+            <storage>S</storage>
+            <viscosity>mu</viscosity>
+            <reference_temperature>reference_temperature</reference_temperature>
+            <density_solid>rho_solid</density_solid>
+            <density_fluid>rho_fluid</density_fluid>
+            <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
+            <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
+            <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
+            <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
+            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
 
             <process_variables>
                     <temperature_variable>temperature</temperature_variable>
@@ -24,12 +32,15 @@
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="v_y" />
             </secondary_variables>
+
+            <specific_body_force>gravity</specific_body_force>
+
         </process>
     </processes>
 
     <time_loop>
         <processes>
-            <process ref="Freezing">
+            <process ref="ThermalConvection">
                 <nonlinear_solver>basic_picard</nonlinear_solver>
                 <convergence_criterion>
                     <type>DeltaX</type>
@@ -69,15 +80,70 @@
 
     <parameters>
         <parameter>
-            <name>K</name>
+            <name>poro</name>
             <type>Constant</type>
-            <value>3.2</value>
+            <value>0.37</value>
         </parameter>
-        <!--<parameter>
-            <name>NP</name>
+        <parameter>
+            <name>kappa</name>
             <type>Constant</type>
-            <value>3.2</value>
-        </parameter>-->
+            <value>1.3e-10</value>
+        </parameter>
+        <parameter>
+            <name>S</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>mu</name>
+            <type>Constant</type>
+            <value>1.793e-3</value>
+        </parameter>
+        <parameter>
+            <name>reference_temperature</name>
+            <type>Constant</type>
+            <value>20</value>
+        </parameter>
+        <parameter>
+            <name>rho_solid</name>
+            <type>Constant</type>
+            <value>2650.0</value>
+        </parameter>
+        <parameter>
+            <name>rho_fluid</name>
+            <type>Constant</type>
+            <value>1000</value>
+        </parameter>
+        <parameter>
+            <name>lambda_solid</name>
+            <type>Constant</type>
+            <value>9.0</value>
+        </parameter>
+        <parameter>
+            <name>lambda_fluid</name>
+            <type>Constant</type>
+            <value>0.6</value>
+        </parameter>
+        <parameter>
+            <name>c_solid</name>
+            <type>Constant</type>
+            <value>835</value>
+        </parameter>
+        <parameter>
+            <name>c_fluid</name>
+            <type>Constant</type>
+            <value>4182</value>
+        </parameter>
+        <parameter>
+            <name>beta</name>
+            <type>Constant</type>
+            <value>4.3e-4</value>
+        </parameter>
+        <parameter>
+            <name>gravity</name>
+            <type>Constant</type>
+            <values>0 0</values>
+        </parameter>
         <parameter>
             <name>T0</name>
             <type>Constant</type>
