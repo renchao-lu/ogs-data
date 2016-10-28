@@ -82,22 +82,22 @@
         <parameter>
             <name>poro</name>
             <type>Constant</type>
-            <value>0.37</value>
+            <value>0.1</value>
         </parameter>
         <parameter>
             <name>kappa</name>
             <type>Constant</type>
-            <value>1.3e-10</value>
+            <value>1.0e-11</value>
         </parameter>
         <parameter>
             <name>S</name>
             <type>Constant</type>
-            <value>0.0</value>
+            <value>2.5e-10</value>
         </parameter>
         <parameter>
             <name>mu</name>
             <type>Constant</type>
-            <value>1.793e-3</value>
+            <value>1.0e-3</value>
         </parameter>
         <parameter>
             <name>reference_temperature</name>
@@ -107,7 +107,7 @@
         <parameter>
             <name>rho_solid</name>
             <type>Constant</type>
-            <value>2650.0</value>
+            <value>2000.0</value>
         </parameter>
         <parameter>
             <name>rho_fluid</name>
@@ -117,27 +117,27 @@
         <parameter>
             <name>lambda_solid</name>
             <type>Constant</type>
-            <value>9.0</value>
+            <value>50.0</value>
         </parameter>
         <parameter>
             <name>lambda_fluid</name>
             <type>Constant</type>
-            <value>0.6</value>
+            <value>10</value>
         </parameter>
         <parameter>
             <name>c_solid</name>
             <type>Constant</type>
-            <value>835</value>
+            <value>250</value>
         </parameter>
         <parameter>
             <name>c_fluid</name>
             <type>Constant</type>
-            <value>4182</value>
+            <value>1100</value>
         </parameter>
         <parameter>
             <name>beta</name>
             <type>Constant</type>
-            <value>4.3e-4</value>
+            <value>2.07e-4</value>
         </parameter>
         <parameter>
             <name>gravity</name>
