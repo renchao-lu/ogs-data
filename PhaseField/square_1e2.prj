@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>square_1x1_quad8_1e2.vtu</mesh>
+    <mesh>square_1x1_quad_1e2.vtu</mesh>
     <geometry>square_1x1.gml</geometry>
 
     <processes>
         <process>
             <name>PhaseField</name>
             <type>PHASE_FIELD</type>
-            <integration_order>3</integration_order>
+            <integration_order>2</integration_order>
             <dimension>2</dimension>
 
             <constitutive_relation>
@@ -167,7 +167,7 @@
         <process_variable>
             <name>displacement</name>
             <components>2</components>
-            <order>2</order>
+            <order>1</order>
 
             <initial_condition>displacement0</initial_condition>
 
@@ -212,7 +212,7 @@
         <process_variable>
             <name>phasefield</name>
             <components>1</components>
-            <order>2</order>
+            <order>1</order>
 
             <initial_condition>phasefield_ic</initial_condition>
 
