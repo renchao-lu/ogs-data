@@ -43,7 +43,7 @@
                 <convergence_criterion>
                     <type>DeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-12</abstol>
+                    <abstol>1e-8</abstol>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -91,7 +91,7 @@
         <parameter>
             <name>k</name>
             <type>Constant</type>
-            <value>1e-12</value>
+            <value>1e-6</value>
         </parameter>
         <parameter>
             <name>gc</name>
@@ -101,22 +101,22 @@
         <parameter>
             <name>ls</name>
             <type>Constant</type>
-            <value>1e-2</value>
+            <value>2</value>
         </parameter>
         <parameter>
             <name>M</name>
             <type>Constant</type>
-            <value>1e-12</value>
+            <value>1e6</value>
         </parameter>
         <parameter>
             <name>gamma</name>
             <type>Constant</type>
-            <value>1e-2</value>
+            <value>1</value>
         </parameter>
         <parameter>
             <name>crtol</name>
             <type>Constant</type>
-            <value>1e-2</value>
+            <value>2e-1</value>
         </parameter>
 
         <parameter>
@@ -140,7 +140,7 @@
         <parameter>
             <name>phasefield_ic</name>
             <type>Constant</type>
-            <values>1</values>
+            <values>1e-1</values>
         </parameter>
         <parameter>
             <name>dirichlet0</name>
