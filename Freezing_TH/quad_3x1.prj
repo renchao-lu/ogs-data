@@ -8,12 +8,26 @@
         <process>
             <name>Freezing</name>
             <type>FREEZING</type>
+            <integration_order>2</integration_order>
 
-            <thermal_conductivity>K</thermal_conductivity>
-	    <!--<new_param>NP</new_param>-->
-
-         <!--   <nonlinear_solver>basic_picard</nonlinear_solver>
-            <time_discretization><type>BackwardEuler</type></time_discretization> -->
+            <porosity>poro</porosity>
+            <intrinsic_permeability>kappa</intrinsic_permeability>
+            <viscosity>mu</viscosity>
+            
+            <reference_temperature>reference_temperature</reference_temperature>
+            <density_solid>rho_solid</density_solid>
+            <density_fluid>rho_fluid</density_fluid>
+            <density_ice>rho_ice</density_ice>
+            <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
+            <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
+            <specific_heat_capacity_ice>c_ice</specific_heat_capacity_ice>
+            <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
+            <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
+            <thermal_conductivity_ice>lambda_ice</thermal_conductivity_ice>
+            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
+            <latent_heat>latent_heat</latent_heat>
+            <sigmoid_coefficient>sigmoid_coeff</sigmoid_coefficient>
+            <compressibility>compressibility</compressibility>
 
 	    <process_variables>
 		    <temperature_variable>temperature</temperature_variable>
@@ -24,6 +38,9 @@
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="v_y" />
             </secondary_variables>
+
+            <specific_body_force>gravity</specific_body_force>  
+
         </process>
     </processes>
 
@@ -69,16 +86,92 @@
     </time_loop>
 
     <parameters>
-        <parameter>
-            <name>K</name>
+         <parameter>
+            <name>poro</name>
             <type>Constant</type>
-            <value>3.2</value>
+            <value>0.37</value>
         </parameter>
-        <!--<parameter>
-            <name>NP</name>
+        <parameter>
+            <name>kappa</name>
             <type>Constant</type>
-            <value>3.2</value>
-        </parameter>-->
+            <value>1.3e-10</value>
+        </parameter>
+        <parameter>
+            <name>mu</name>
+            <type>Constant</type>
+            <value>1.793e-3</value>
+        </parameter>
+        <parameter>
+            <name>reference_temperature</name>
+            <type>Constant</type>
+            <value>20</value>
+        </parameter>
+        <parameter>
+            <name>rho_solid</name>
+            <type>Constant</type>
+            <value>2650.0</value>
+        </parameter>
+        <parameter>
+            <name>rho_fluid</name>
+            <type>Constant</type>
+            <value>1000</value>
+        </parameter>
+        <parameter>
+            <name>rho_ice</name>
+            <type>Constant</type>
+            <value>1000</value>
+        </parameter>
+        <parameter>
+            <name>lambda_solid</name>
+            <type>Constant</type>
+            <value>9</value>
+        </parameter>
+        <parameter>
+            <name>lambda_fluid</name>
+            <type>Constant</type>
+            <value>0.6</value>
+        </parameter>
+        <parameter>
+            <name>lambda_ice</name>
+            <type>Constant</type>
+            <value>2.14</value>
+        </parameter>
+        <parameter>
+            <name>c_solid</name>
+            <type>Constant</type>
+            <value>835.0</value>
+        </parameter>
+        <parameter>
+            <name>c_fluid</name>
+            <type>Constant</type>
+            <value>4182</value>
+        </parameter>
+        <parameter>
+            <name>c_ice</name>
+            <type>Constant</type>
+            <value>2060</value>
+        </parameter>
+        <parameter>
+            <name>beta</name>
+            <type>Constant</type>
+            <value>4.3e-4</value>
+       </parameter>
+        <parameter>
+            <name>latent_heat</name>
+            <type>Constant</type>
+            <value>334000</value>
+       </parameter>
+        <parameter>
+            <name>sigmoid_coeff</name>
+            <type>Constant</type>
+            <value>5</value>
+       </parameter>
+        <parameter>
+            <name>compressibility</name>
+            <type>Constant</type>
+            <value>1e-8</value>
+       </parameter>
+
         <parameter>
             <name>T0</name>
             <type>MeshNode</type>
@@ -107,6 +200,12 @@
             <name>t_Dirichlet_left</name>
             <type>Constant</type>
             <value>5</value>
+        </parameter>
+
+        <parameter>
+            <name>gravity</name>
+            <type>Constant</type>
+            <values>0 0</values>
         </parameter>
     </parameters>
 
