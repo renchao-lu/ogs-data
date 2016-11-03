@@ -108,7 +108,7 @@
         <parameter>
             <name>phasefield_ic</name>
             <type>Constant</type>
-            <values>1</values>
+            <values>0</values>
         </parameter>
         <parameter>
             <name>dirichlet0</name>
