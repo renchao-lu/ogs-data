@@ -8,22 +8,39 @@
         <process>
             <name>Freezing</name>
             <type>FREEZING</type>
+            <integration_order>2</integration_order>
 
-            <thermal_conductivity>K</thermal_conductivity>
-            <!--<new_param>NP</new_param>-->
+            <porosity>poro</porosity>
+            <intrinsic_permeability>kappa</intrinsic_permeability>
+            <viscosity>mu</viscosity>
+            
+            <reference_temperature>reference_temperature</reference_temperature>
+            <density_solid>rho_solid</density_solid>
+            <density_fluid>rho_fluid</density_fluid>
+            <density_ice>rho_ice</density_ice>
+            <specific_heat_capacity_solid>c_solid</specific_heat_capacity_solid>
+            <specific_heat_capacity_fluid>c_fluid</specific_heat_capacity_fluid>
+            <specific_heat_capacity_ice>c_ice</specific_heat_capacity_ice>
+            <thermal_conductivity_solid>lambda_solid</thermal_conductivity_solid>
+            <thermal_conductivity_fluid>lambda_fluid</thermal_conductivity_fluid>
+            <thermal_conductivity_ice>lambda_ice</thermal_conductivity_ice>
+            <thermal_expansion_coefficient>beta</thermal_expansion_coefficient>
+            <latent_heat>latent_heat</latent_heat>
+            <sigmoid_coefficient>sigmoid_coeff</sigmoid_coefficient>
+            <compressibility>compressibility</compressibility>
 
-         <!--   <nonlinear_solver>basic_picard</nonlinear_solver>
-            <time_discretization><type>BackwardEuler</type></time_discretization> -->
-
-            <process_variables>
-                    <temperature_variable>temperature</temperature_variable>
-                    <pressure_variable>pressure</pressure_variable>
-            </process_variables>
+	    <process_variables>
+		    <temperature_variable>temperature</temperature_variable>
+		    <pressure_variable>pressure</pressure_variable>
+	    </process_variables>
 
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
                 <secondary_variable type="static" internal_name="darcy_velocity_y" output_name="v_y" />
             </secondary_variables>
+
+            <specific_body_force>gravity</specific_body_force>  
+
         </process>
     </processes>
 
@@ -44,7 +61,7 @@
                       <variable>pressure</variable>
                       <variable>v_x</variable>
                       <variable>v_y</variable>
-                    </variables>
+                    </variables> 
             </output>
             </process>
         </processes>
@@ -54,7 +71,7 @@
             <t_initial> 0.0 </t_initial>
             <t_end> 4000 </t_end>
        <timesteps>
-         <pair><repeat>4</repeat><delta_t>1000</delta_t></pair>
+         <pair><repeat>4</repeat><delta_t>1000</delta_t></pair>   
        </timesteps>
        </time_stepping>
 
@@ -62,22 +79,99 @@
            <type>VTK</type>
            <prefix>square_1e3</prefix>
            <timesteps>
-               <pair><repeat> 1 </repeat><each_steps> 1 </each_steps></pair>
+               <pair><repeat> 1 </repeat><each_steps> 4 </each_steps></pair>
            </timesteps>
       </output>
+
     </time_loop>
 
     <parameters>
-        <parameter>
-            <name>K</name>
+         <parameter>
+            <name>poro</name>
             <type>Constant</type>
-            <value>3.2</value>
+            <value>0.1</value>
         </parameter>
-        <!--<parameter>
-            <name>NP</name>
+        <parameter>
+            <name>kappa</name>
             <type>Constant</type>
-            <value>3.2</value>
-        </parameter>-->
+            <value>1e-11</value>
+        </parameter>
+        <parameter>
+            <name>mu</name>
+            <type>Constant</type>
+            <value>1e-3</value>
+        </parameter>
+        <parameter>
+            <name>reference_temperature</name>
+            <type>Constant</type>
+            <value>20</value>
+        </parameter>
+        <parameter>
+            <name>rho_solid</name>
+            <type>Constant</type>
+            <value>2000.0</value>
+        </parameter>
+        <parameter>
+            <name>rho_fluid</name>
+            <type>Constant</type>
+            <value>1000</value>
+        </parameter>
+        <parameter>
+            <name>rho_ice</name>
+            <type>Constant</type>
+            <value>1000</value>
+        </parameter>
+        <parameter>
+            <name>lambda_solid</name>
+            <type>Constant</type>
+            <value>5.0</value>
+        </parameter>
+        <parameter>
+            <name>lambda_fluid</name>
+            <type>Constant</type>
+            <value>1.0</value>
+        </parameter>
+        <parameter>
+            <name>lambda_ice</name>
+            <type>Constant</type>
+            <value>2.0</value>
+        </parameter>
+        <parameter>
+            <name>c_solid</name>
+            <type>Constant</type>
+            <value>250.0</value>
+        </parameter>
+        <parameter>
+            <name>c_fluid</name>
+            <type>Constant</type>
+            <value>1100</value>
+        </parameter>
+        <parameter>
+            <name>c_ice</name>
+            <type>Constant</type>
+            <value>2000</value>
+        </parameter>
+        <parameter>
+            <name>beta</name>
+            <type>Constant</type>
+            <value>0</value>
+       </parameter>
+        <parameter>
+            <name>latent_heat</name>
+            <type>Constant</type>
+            <value>0</value>
+       </parameter>
+        <parameter>
+            <name>sigmoid_coeff</name>
+            <type>Constant</type>
+            <value>10</value>
+       </parameter>
+        <parameter>
+            <name>compressibility</name>
+            <type>Constant</type>
+            <value>0</value>
+       </parameter>
+
         <parameter>
             <name>T0</name>
             <type>Constant</type>
@@ -131,10 +225,15 @@
             <type>Constant</type>
             <value>273.15</value>
         </parameter>
+
+        <parameter>
+            <name>gravity</name>
+            <type>Constant</type>
+            <values>0 0</values>
+        </parameter>
     </parameters>
 
-
-    <process_variables>
+     <process_variables>
         <process_variable>
             <name>temperature</name>
             <components>1</components>
@@ -181,28 +280,28 @@
             <source_terms>
             </source_terms>
         </process_variable>
+
         <process_variable>
             <name>pressure</name>
             <components>1</components>
 
             <initial_condition>P0</initial_condition>
 
-            <boundary_conditions>
+           <boundary_conditions>
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_left</parameter>
-                </boundary_condition>
+                </boundary_condition> 
 
                 <boundary_condition>
                     <geometrical_set>square_1x1_geometry</geometrical_set>
                     <geometry>right</geometry>
                     <type>Dirichlet</type>
                     <parameter>p_Dirichlet_right</parameter>
-                </boundary_condition>
-
-            </boundary_conditions>
+                </boundary_condition> 
+            </boundary_conditions> 
 
             <source_terms>
             </source_terms>
@@ -213,26 +312,64 @@
         <nonlinear_solver>
             <name>basic_picard</name>
             <type>Picard</type>
-            <max_iter>20</max_iter>
+            <max_iter>100</max_iter>
             <linear_solver>general_linear_solver</linear_solver>
         </nonlinear_solver>
     </nonlinear_solvers>
 
-    <linear_solvers>
+   <!-- <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
-            <lis>-i bicgstab -p ilu -tol 1e-24 -maxiter 10000 -print mem</lis>
+            <lis>-i bicgstab -p ilu -tol 1e-6 -maxiter 10000 -print mem</lis>
             <eigen>
-                <solver_type>        SparseLU </solver_type>
-                <precon_type>        DIAGONAL      </precon_type>
+                <solver_type>        CG </solver_type>
+                <precon_type>        ilu      </precon_type>
                 <max_iteration_step> 10000    </max_iteration_step>
-                <error_tolerance>    1e-24    </error_tolerance>
+                <error_tolerance>    1e-6   </error_tolerance>
             </eigen>
             <petsc>
                 <prefix>tes</prefix>
-                <parameters>-tes_ksp_type cg -tes_pc_type bjacobi -tes_ksp_rtol 1e-24 -tes_ksp_max_it 10000</parameters>
+                <parameters>-tes_ksp_type cg -tes_pc_type bjacobi -tes_ksp_rtol 1e-6 -tes_ksp_max_it 10000</parameters>
             </petsc>
         </linear_solver>
-    </linear_solvers>
+    </linear_solvers>  -->
+
+   <!--<linear_solvers>
+        <linear_solver>
+            <name>general_linear_solver</name>
+            <lis>-i bicgstab -p ilu -tol 1e-4 -maxiter 10000 -print mem</lis>
+            <eigen>
+                <solver_type>        CG </solver_type>
+                <precon_type>        DIAGONAL     </precon_type>
+                <max_iteration_step> 10000    </max_iteration_step>
+                <error_tolerance>    1e-4   </error_tolerance>
+            </eigen>
+            <petsc>
+                <prefix>tes</prefix>
+                <parameters>-tes_ksp_type cg -tes_pc_type bjacobi -tes_ksp_rtol 1e-16 -tes_ksp_max_it 10000</parameters>
+            </petsc>
+        </linear_solver>
+    </linear_solvers> --> 
+
+
+    <linear_solvers>
+        <linear_solver>
+            <name>general_linear_solver</name>
+            <lis>-i cg -p jacobi -tol 1e-8 -maxiter 10000</lis> 
+            <eigen>
+                <solver_type>SparseLU</solver_type>
+                <precon_type>DIAGONAL</precon_type>
+                <max_iteration_step>10000</max_iteration_step>
+                <error_tolerance>1e-8</error_tolerance> 
+            </eigen>
+            <petsc>
+                <prefix>gw</prefix>
+                <parameters>-gw_ksp_type cg -gw_pc_type bjacobi -gw_ksp_rtol 1e-8 -gw_ksp_max_it 10000</parameters>
+            </petsc>
+        </linear_solver>
+    </linear_solvers> 
+
+
+
 
 </OpenGeoSysProject>
