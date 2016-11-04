@@ -16,11 +16,11 @@
                 <poissons_ratio>nu</poissons_ratio>
             </constitutive_relation>
 
-            <residual_stiffness>1e-1</residual_stiffness>
+            <residual_stiffness>1e-3</residual_stiffness>
             <crack_resistance>1</crack_resistance>
-            <crack_length_scale>2</crack_length_scale>
+            <crack_length_scale>10</crack_length_scale>
             <kinetic_coefficient>1e6</kinetic_coefficient>
-            <penalty_constant>1</penalty_constant>
+            <penalty_constant>1e-16</penalty_constant>
             <critical_tolerance>1e-2</critical_tolerance>
             <solid_density>rho_sr</solid_density>
 
@@ -118,7 +118,7 @@
         <parameter>
             <name>dirichlet1</name>
             <type>Constant</type>
-            <value>0.05</value>
+            <value>0.005</value>
         </parameter>
     </parameters>
 
