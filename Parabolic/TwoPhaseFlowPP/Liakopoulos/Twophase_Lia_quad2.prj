@@ -150,6 +150,7 @@
 		<process_variable>
             <name>gas_pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>pg_0</initial_condition>
 
@@ -175,6 +176,7 @@
 		<process_variable>
             <name>capillary_pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>pc_0</initial_condition>
 			
