@@ -55,7 +55,7 @@
                       <variable>pressure</variable>
                       <variable>darcy_velocity_x</variable>
                       <variable>darcy_velocity_y</variable>
-                    </variables> 
+                    </variables>
                 </output>
             </process>
         </processes>
