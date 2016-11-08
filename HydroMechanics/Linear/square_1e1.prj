@@ -19,10 +19,10 @@
             <intrinsic_permeability>k</intrinsic_permeability>
             <specific_storage>S</specific_storage>
             <fluid_viscosity>mu</fluid_viscosity>
+            <fluid_density>rho_fr</fluid_density>
             <biot_coefficient>alpha</biot_coefficient>
             <porosity>phi</porosity>
             <solid_density>rho_sr</solid_density>
-            <fluid_density>rho_fr</fluid_density>
 
             <process_variables>
                 <displacement>displacement</displacement>
