@@ -17,7 +17,7 @@
             </constitutive_relation>
 
             <intrinsic_permeability>k</intrinsic_permeability>
-            <storage_coefficient>S</storage_coefficient>
+            <specific_storage>S</specific_storage>
             <fluid_viscosity>mu</fluid_viscosity>
             <biot_coefficient>alpha</biot_coefficient>
             <porosity>phi</porosity>
