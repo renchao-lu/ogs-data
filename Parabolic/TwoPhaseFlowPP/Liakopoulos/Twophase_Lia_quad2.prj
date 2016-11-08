@@ -62,7 +62,7 @@
                 <secondary_variable type="static" internal_name="pressure_wetting" output_name="pressure_wetting" />
             </secondary_variables>
 
-            <specific_body_force>gravity</specific_body_force>
+            <specific_body_force>0 -9.81</specific_body_force>
             <mass_lumping> true </mass_lumping>
         </process>
     </processes>
@@ -92,11 +92,6 @@
             <name>pg_0</name>
             <type>Constant</type>
             <value>101325.0</value>
-        </parameter>
-        <parameter>
-            <name>gravity</name>
-            <type>Constant</type>
-            <values>0 -9.81</values>
         </parameter>
     </parameters>
 
