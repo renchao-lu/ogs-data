@@ -205,7 +205,7 @@
         <process_variable>
             <name>temperature</name>
             <components>1</components>
-
+            <order>1</order>
             <initial_condition>T0</initial_condition>
 
             <boundary_conditions>
@@ -231,6 +231,7 @@
         <process_variable>
             <name>pressure</name>
             <components>1</components>
+            <order>1</order>
 
             <initial_condition>P0</initial_condition>
 
