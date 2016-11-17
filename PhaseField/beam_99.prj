@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>beam_3.vtu</mesh>
-    <geometry>beam_3.gml</geometry>
+    <mesh>beam_99.vtu</mesh>
+    <geometry>beam_99.gml</geometry>
 
     <processes>
         <process>
@@ -18,7 +18,7 @@
 
             <residual_stiffness>1e-3</residual_stiffness>
             <crack_resistance>2700</crack_resistance>
-            <crack_length_scale>1</crack_length_scale>
+            <crack_length_scale>0.1</crack_length_scale>
             <kinetic_coefficient>1e6</kinetic_coefficient>
             <penalty_constant>1e-16</penalty_constant>
             <critical_tolerance>5e-2</critical_tolerance>
@@ -61,13 +61,13 @@
             <t_initial>0</t_initial>
             <t_end>50</t_end>
             <timesteps>
-                <pair><repeat>1000</repeat><delta_t>1e-5</delta_t></pair>
+                <pair><repeat>1000</repeat><delta_t>1e-6</delta_t></pair>
             </timesteps>
         </time_stepping>
 
         <output>
             <type>VTK</type>
-            <prefix>beam_3</prefix>
+            <prefix>beam_99</prefix>
             <timesteps>
                 <pair><repeat>500</repeat><each_steps>10000</each_steps></pair>
             </timesteps>
@@ -146,7 +146,7 @@
 
             <boundary_conditions>
                 <boundary_condition>
-                    <geometrical_set>beam_3_geometry</geometrical_set>
+                    <geometrical_set>beam_99_geometry</geometrical_set>
                     <geometry>left</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
@@ -154,7 +154,7 @@
                 </boundary_condition>
 
                 <boundary_condition>
-                    <geometrical_set>beam_3_geometry</geometrical_set>
+                    <geometrical_set>beam_99_geometry</geometrical_set>
                     <geometry>bottom</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
@@ -162,7 +162,7 @@
                 </boundary_condition>
 
                 <boundary_condition>
-                    <geometrical_set>beam_3_geometry</geometrical_set>
+                    <geometrical_set>beam_99_geometry</geometrical_set>
                     <geometry>right</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
