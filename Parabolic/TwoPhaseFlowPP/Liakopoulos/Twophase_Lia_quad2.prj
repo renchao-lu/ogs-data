@@ -12,7 +12,7 @@
 
             <jacobian_assembler>
                 <type>CentralDifferences</type>
-                <component_magnitudes>1e5 1e+5</component_magnitudes>
+                <component_magnitudes>1e4 1e+5</component_magnitudes>
                 <relative_epsilons>1e-7 1e-7</relative_epsilons>
             </jacobian_assembler>
 
@@ -122,7 +122,7 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>200</t_end>
+            <t_end>20</t_end>
            <timesteps>
                 <pair><repeat>100</repeat><delta_t>0.01</delta_t></pair>
                 <pair><repeat>19</repeat><delta_t>1</delta_t></pair>
