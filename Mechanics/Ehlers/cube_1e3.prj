@@ -11,7 +11,7 @@
             <dimension>3</dimension>
 
             <constitutive_relation>
-                <type>SingleSurface</type>
+                <type>Ehlers</type>
                 <shear_modulus>G</shear_modulus>
                 <bulk_modulus>K</bulk_modulus>
                 <kappa>kappa</kappa>
