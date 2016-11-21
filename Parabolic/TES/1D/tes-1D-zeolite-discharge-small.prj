@@ -203,8 +203,6 @@
                 </boundary_condition>
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
         </process_variable>
         <process_variable>
             <name>temperature</name>
@@ -222,8 +220,6 @@
                 </boundary_condition>
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
         </process_variable>
         <process_variable>
             <name>v_mass_frac</name>
@@ -241,8 +237,6 @@
                 </boundary_condition>
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
         </process_variable>
     </process_variables>
 </OpenGeoSysProject>
