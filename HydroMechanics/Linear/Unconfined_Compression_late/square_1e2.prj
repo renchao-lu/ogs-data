@@ -17,7 +17,7 @@
             </constitutive_relation>
 
             <intrinsic_permeability>k</intrinsic_permeability>
-            <storage_coefficient>S</storage_coefficient>
+            <specific_storage>S</specific_storage>
             <fluid_viscosity>mu</fluid_viscosity>
             <biot_coefficient>alpha</biot_coefficient>
             <porosity>phi</porosity>
@@ -32,7 +32,7 @@
             <secondary_variables>
             </secondary_variables>
 
-            <specific_body_force>gravity</specific_body_force>
+            <specific_body_force>0 0</specific_body_force>
         </process>
     </processes>
 
@@ -134,12 +134,6 @@
         </parameter>
 
         <parameter>
-            <name>gravity</name>
-            <type>Constant</type>
-            <values>0 0</values>
-        </parameter>
-
-        <parameter>
             <name>pressure_ic</name>
             <type>Constant</type>
             <values>0</values>
@@ -192,8 +186,6 @@
                 </boundary_condition>   
             </boundary_conditions> 
 
-            <source_terms>
-            </source_terms>
         </process_variable>
 
         <process_variable>
@@ -213,8 +205,6 @@
                 </boundary_condition> 
             </boundary_conditions>
 
-            <source_terms>
-            </source_terms>
         </process_variable>
     </process_variables>
 
