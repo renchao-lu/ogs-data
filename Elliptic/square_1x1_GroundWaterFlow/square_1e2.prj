@@ -18,6 +18,8 @@
             <secondary_variables>
                 <secondary_variable type="static" internal_name="darcy_velocity_x" output_name="v_x" />
             </secondary_variables>
+
+            <source_term>Q</source_term>
         </process>
     </processes>
 
@@ -80,6 +82,12 @@
     <parameters>
         <parameter>
             <name>K</name>
+            <type>Constant</type>
+            <value>1</value>
+        </parameter>
+
+        <parameter>
+            <name>Q</name>
             <type>Constant</type>
             <value>1</value>
         </parameter>
