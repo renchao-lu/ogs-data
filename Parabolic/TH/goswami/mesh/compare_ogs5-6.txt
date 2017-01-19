@@ -1,0 +1,12 @@
+sim until 3000s
+
+ogs5
+SELF_ADAPTIVE
+60 sek, 30MB res mem
+
+TIME_STEPS (specific time steps, same as ogs6)
+292 sek
+
+ogs6
+specific time steps
+130 sek, 120MB res mem
