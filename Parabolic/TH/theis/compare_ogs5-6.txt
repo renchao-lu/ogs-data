@@ -1,0 +1,9 @@
+sim until 1e7s
+
+ogs5
+TIME_STEPS (specific time steps, same as ogs6)
+77 sek, 107MB res mem
+
+ogs6
+specific time steps
+79 sek, 261MB res mem
