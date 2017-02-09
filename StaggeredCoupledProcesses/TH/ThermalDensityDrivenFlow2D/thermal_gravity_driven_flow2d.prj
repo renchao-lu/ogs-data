@@ -88,7 +88,7 @@
 
     <time_loop>
        <global_process_coupling>
-           <max_iteration> 5 </max_iteration>
+           <max_iter> 5 </max_iter>
            <convergence_criterion>
                <type>Residual</type>
                <norm_type>NORM2</norm_type>
